@@ -1,0 +1,26 @@
+.searchForm {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 550px;
+}
+
+.searchFormInput {
+  outline: none;
+  padding: 20px;
+  width: 400px;
+  padding: 5px;
+  border: 2px solid palevioletred;
+  cursor: pointer;
+}
+
+.searchFormButton {
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  background-color: palevioletred;
+  font-weight: bold;
+  border: 6px solid palevioletred;
+}

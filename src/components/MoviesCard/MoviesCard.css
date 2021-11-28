@@ -1,0 +1,39 @@
+.movieCard {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.movieImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movieDescription {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.movieYear {
+  font-size: 25px;
+  color: palevioletred;
+}
+
+.movieScore {
+  font-size: 18px;
+  font-weight: 700;
+  color: palevioletred;
+}
+
+.movieGenres {
+  display: flex;
+  padding-left: 0;
+}
+
+.movieGenresItem:not(:last-child) {
+  padding-left: 0;
+  margin-right: 15px;
+}
