@@ -16,13 +16,17 @@ import Reviews from '../components/Reviews/Reviews';
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
+  const [error, setError] = useState(null);
+
   const location = useLocation();
   const navigate = useNavigate();
 
   console.log(location);
 
   useEffect(() => {
-    MoviesApi.DetailsMoviesFetch(movieId).then(data => setMovie(data));
+    MoviesApi.DetailsMoviesFetch(movieId)
+    .then(data => setMovie(data))
+    .catch(error => setError(error))
   }, [movieId]);
 
   const onGoBack = () => {
@@ -47,6 +51,7 @@ const MovieDetailsPage = () => {
           Go back
         </button>
       </div>
+      {error && <h1>NO INFORMATION ABOUT THIS MOVIE :( </h1>}
       {movie && <MoviesCard movie={movie} />}
       <hr />
       <h3>Additional information</h3>
