@@ -23,14 +23,16 @@ const MovieDetailsPage = () => {
     MoviesApi.DetailsMoviesFetch(movieId).then(data => setMovie(data));
   }, [movieId]);
 
-  const goBack = () => {
+  const onGoBack = () => {
     if (location.pathname === `/movies/${movieId}`) {
       navigate(-1);
     }
-
     if (
-      location.pathname === `/movies/${movieId}/cast` ||
-      `/movies/${movieId}/reviews`
+      location.pathname === `/movies/${movieId}/cast`) {
+      navigate(-2);
+    }
+    if (
+      location.pathname === `/movies/${movieId}/reviews`
     ) {
       navigate(-2);
     }
@@ -39,7 +41,7 @@ const MovieDetailsPage = () => {
   return (
     <>
       <div>
-        <button type="button" onClick={goBack} className="btnBack">
+        <button type="button" onClick={onGoBack} className="btnBack">
           Go back
         </button>
       </div>
@@ -48,7 +50,10 @@ const MovieDetailsPage = () => {
       <h3>Additional information</h3>
       <ul>
         <li className="AddInfoMovie">
-          <NavLink to="cast">Cast</NavLink>
+          <NavLink to={{
+            pathname: `/movies/${movieId}/cast`,
+            state: {from: location},
+          }}>Cast</NavLink>
         </li>
         <li className="AddInfoMovie">
           <NavLink to="reviews">Reviews</NavLink>
