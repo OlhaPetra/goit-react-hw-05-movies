@@ -19,6 +19,8 @@ const MovieDetailsPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  console.log(location);
+
   useEffect(() => {
     MoviesApi.DetailsMoviesFetch(movieId).then(data => setMovie(data));
   }, [movieId]);
@@ -50,10 +52,7 @@ const MovieDetailsPage = () => {
       <h3>Additional information</h3>
       <ul>
         <li className="AddInfoMovie">
-          <NavLink to={{
-            pathname: `/movies/${movieId}/cast`,
-            state: {from: location},
-          }}>Cast</NavLink>
+          <NavLink to="cast">Cast</NavLink>
         </li>
         <li className="AddInfoMovie">
           <NavLink to="reviews">Reviews</NavLink>
