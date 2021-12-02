@@ -1,9 +1,9 @@
 import { React, lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import AppBar from './components/AppBar/AppBar';
+import Loading from './components/Loading/Loading';
 
 const HomePage = lazy(() =>
   import('./views/HomePage' /* webpackChunkName: "HomePage"*/),
@@ -19,17 +19,7 @@ function App() {
   return (
     <div className="conteiner">
       <AppBar />
-      <Suspense
-        fallback={
-          <Loader
-            type="Oval"
-            color="#c25555"
-            height={150}
-            width={150}
-            className="Loader"
-          />
-        }
-      >
+      <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/movies" element={<MoviesPage />}></Route>

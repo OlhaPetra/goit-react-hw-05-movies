@@ -1,0 +1,22 @@
+.btnBack {
+  display: flex;
+  width: 70px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: palevioletred;
+  border: 0;
+  border-radius: 10px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.btnBack:hover,
+.btnBack:focus {
+  box-shadow: 0 0 5px black;
+}
